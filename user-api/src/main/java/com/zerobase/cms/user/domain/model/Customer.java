@@ -10,6 +10,7 @@ import java.util.Locale;
 
 @Entity
 @Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
