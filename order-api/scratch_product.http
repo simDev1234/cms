@@ -16,7 +16,7 @@ X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ6REhCV2tISFpTUlhYekphRFhoa3lTcnBPd
 }
 
 ### 상품 아이템 추가
-POST http://localhost:8082/seller/product/item
+POST http://localhost:8082/seller/product/item?id=2
 Content-Type: application/json
 X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ6REhCV2tISFpTUlhYekphRFhoa3lTcnBPd3JxYUhIQWZhblBKUVpBNFI0PSIsImp0aSI6IjEiLCJyb2xlcyI6IkNVU1RPTUVSIiwiaWF0IjoxNjY5NTU4MTA5LCJleHAiOjE2Njk2NDQ1MDl9.ocncb6rxh_rKgQDgFHycpik1OexqqZPFdTwbgz42f4c
 
@@ -57,3 +57,13 @@ X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ6REhCV2tISFpTUlhYekphRFhoa3lTcnBPd
   "price": 12000,
   "count": 50
 }
+
+### 상품 삭제
+DELETE http://localhost:8082/seller/product/1
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ6REhCV2tISFpTUlhYekphRFhoa3lTcnBPd3JxYUhIQWZhblBKUVpBNFI0PSIsImp0aSI6IjEiLCJyb2xlcyI6IkNVU1RPTUVSIiwiaWF0IjoxNjY5NTU4MTA5LCJleHAiOjE2Njk2NDQ1MDl9.ocncb6rxh_rKgQDgFHycpik1OexqqZPFdTwbgz42f4c
+
+### 상품 아이템 삭제
+DELETE http://localhost:8082/seller/product/item/1?id=2
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ6REhCV2tISFpTUlhYekphRFhoa3lTcnBPd3JxYUhIQWZhblBKUVpBNFI0PSIsImp0aSI6IjEiLCJyb2xlcyI6IkNVU1RPTUVSIiwiaWF0IjoxNjY5NTU4MTA5LCJleHAiOjE2Njk2NDQ1MDl9.ocncb6rxh_rKgQDgFHycpik1OexqqZPFdTwbgz42f4c
