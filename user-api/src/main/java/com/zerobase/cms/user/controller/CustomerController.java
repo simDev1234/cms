@@ -1,10 +1,12 @@
 package com.zerobase.cms.user.controller;
 
+import com.zerobase.cms.user.domain.customer.ChangeBalanceForm;
 import com.zerobase.cms.user.domain.customer.CustomerDto;
 import com.zerobase.cms.user.domain.model.Customer;
 import com.zerobase.cms.user.exception.CustomException;
 import com.zerobase.cms.user.exception.ErrorCode;
-import com.zerobase.cms.user.service.CustomerService;
+import com.zerobase.cms.user.service.customer.CustomerBalanceService;
+import com.zerobase.cms.user.service.customer.CustomerService;
 import com.zerobase.domain.config.JwtAuthenticationProvider;
 import com.zerobase.domain.config.domain.common.UserVo;
 import lombok.RequiredArgsConstructor;
@@ -20,6 +22,8 @@ public class CustomerController {
 
     private final CustomerService customerService;
 
+    private final CustomerBalanceService customerBalanceService;
+
     @GetMapping("/getInfo")
     public ResponseEntity<CustomerDto> getInfo(@RequestHeader(name = "X-AUTH-TOKEN") String token) {
 
@@ -29,6 +33,16 @@ public class CustomerController {
                 .orElseThrow(() -> new CustomException(ErrorCode.NOT_FOUND_USER));
 
         return ResponseEntity.ok(CustomerDto.from(c));
+    }
+
+    @PostMapping("/balance")
+    public ResponseEntity<Integer> changeBalance(@RequestHeader(name = "X-AUTH-TOKEN") String token,
+                                                 @RequestBody ChangeBalanceForm form) {
+
+        UserVo vo = jwtAuthenticationProvider.getUserVo(token);
+
+        return ResponseEntity.ok(customerBalanceService.changeBalance(vo.getId(), form).getCurrentMoney());
+
     }
 
 }
