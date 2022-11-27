@@ -1,0 +1,31 @@
+### 상품 등록
+POST http://localhost:8082/seller/product
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ6REhCV2tISFpTUlhYekphRFhoa3lTcnBPd3JxYUhIQWZhblBKUVpBNFI0PSIsImp0aSI6IjEiLCJyb2xlcyI6IkNVU1RPTUVSIiwiaWF0IjoxNjY5NTU4MTA5LCJleHAiOjE2Njk2NDQ1MDl9.ocncb6rxh_rKgQDgFHycpik1OexqqZPFdTwbgz42f4c
+
+{
+  "name": "나이키 ",
+  "description": "test",
+  "addProductItemForms": [
+    {
+      "name": "270",
+      "count": 1,
+      "price": 100000
+    }
+  ]
+}
+
+### 상품 아이템 추가
+POST http://localhost:8082/seller/product/item
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ6REhCV2tISFpTUlhYekphRFhoa3lTcnBPd3JxYUhIQWZhblBKUVpBNFI0PSIsImp0aSI6IjEiLCJyb2xlcyI6IkNVU1RPTUVSIiwiaWF0IjoxNjY5NTU4MTA5LCJleHAiOjE2Njk2NDQ1MDl9.ocncb6rxh_rKgQDgFHycpik1OexqqZPFdTwbgz42f4c
+
+{
+  "productId": 1,
+  "name": "275",
+  "price": 12000,
+  "count": 4
+}
+
+### 이메일 인증 (고객)
+GET http://localhost:8081/signup/verify/customer?email=simdev1234@gmail.com&code=PxPsY6UzXC
