@@ -27,5 +27,33 @@ X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ6REhCV2tISFpTUlhYekphRFhoa3lTcnBPd
   "count": 4
 }
 
-### 이메일 인증 (고객)
-GET http://localhost:8081/signup/verify/customer?email=simdev1234@gmail.com&code=PxPsY6UzXC
+### 상품 수정
+PUT http://localhost:8082/seller/product
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ6REhCV2tISFpTUlhYekphRFhoa3lTcnBPd3JxYUhIQWZhblBKUVpBNFI0PSIsImp0aSI6IjEiLCJyb2xlcyI6IkNVU1RPTUVSIiwiaWF0IjoxNjY5NTU4MTA5LCJleHAiOjE2Njk2NDQ1MDl9.ocncb6rxh_rKgQDgFHycpik1OexqqZPFdTwbgz42f4c
+
+{
+  "productId" : 1,
+  "name": "나이키 에어포스 한정판",
+  "description": "test",
+  "items": [
+    {
+      "id": 1,
+      "name": "280",
+      "count": 1,
+      "price": 100000
+    }
+  ]
+}
+
+### 상품 아이템 수정
+PUT http://localhost:8082/seller/product/item
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ6REhCV2tISFpTUlhYekphRFhoa3lTcnBPd3JxYUhIQWZhblBKUVpBNFI0PSIsImp0aSI6IjEiLCJyb2xlcyI6IkNVU1RPTUVSIiwiaWF0IjoxNjY5NTU4MTA5LCJleHAiOjE2Njk2NDQ1MDl9.ocncb6rxh_rKgQDgFHycpik1OexqqZPFdTwbgz42f4c
+
+{
+  "id" : 1,
+  "name": "280",
+  "price": 12000,
+  "count": 50
+}
