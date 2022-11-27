@@ -19,7 +19,4 @@ dependencies {
     implementation 'org.apache.commons:commons-lang3:3.12.0'      // 이메일 인증 random String
 
     testImplementation 'com.h2database:h2'   // 테스트용 db
-
-    runtimeOnly 'com.h2database:h2'
-    runtimeOnly 'com.mysql:mysql-connector-j'
 }
