@@ -11,15 +11,13 @@ import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
-import static com.zerobase.domain.config.domain.common.UserType.CUSTOMER;
-import static com.zerobase.domain.config.domain.common.UserType.SELLER;
-
-@WebFilter(urlPatterns = "/customer/*")
+@WebFilter(urlPatterns = "/seller/*")
 @RequiredArgsConstructor
-public class CustomerFilter implements Filter {
+public class SellerFilter implements Filter {
 
     private final JwtAuthenticationProvider jwtAuthenticationProvider;
-    private final CustomerService customerService;
+
+    private final SellerService sellerService;
 
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
@@ -33,7 +31,7 @@ public class CustomerFilter implements Filter {
 
         UserVo vo = jwtAuthenticationProvider.getUserVo(token);
 
-        customerService.findByIdAndEmail(vo.getId(), vo.getEmail()).orElseThrow(
+        sellerService.findByIdAndEmail(vo.getId(), vo.getEmail()).orElseThrow(
                 () -> new ServletException("Invalid Access")
         );
 

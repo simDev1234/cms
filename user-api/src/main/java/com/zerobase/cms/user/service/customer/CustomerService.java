@@ -1,4 +1,4 @@
-package com.zerobase.cms.user.service;
+package com.zerobase.cms.user.service.customer;
 
 import com.zerobase.cms.user.domain.model.Customer;
 import com.zerobase.cms.user.domain.repository.CustomerRepository;
@@ -14,7 +14,7 @@ public class CustomerService {
     public final CustomerRepository customerRepository;
 
     public Optional<Customer> findByIdAndEmail(Long id, String email) {
-        return customerRepository.findById(id);
+        return customerRepository.findByIdAndEmail(id, email);
     }
 
     public Optional<Customer> findValidCustomer(String email, String password) {
