@@ -9,7 +9,8 @@ import org.springframework.http.HttpStatus;
 public enum ErrorCode {
 
     NOT_FOUND_PRODUCT(HttpStatus.BAD_REQUEST, "해당 상품이 없습니다."),
-    SAME_ITEM_NAME(HttpStatus.BAD_REQUEST, "동일 상품이 이미 존재합니다.");
+    SAME_ITEM_NAME(HttpStatus.BAD_REQUEST, "동일 상품이 이미 존재합니다."),
+    NOT_FOUND_ITEM(HttpStatus.BAD_REQUEST, "해당 아이템이 없습니다.");
 
     private final HttpStatus httpStatus;
     private final String message;
