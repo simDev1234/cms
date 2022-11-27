@@ -1,7 +1,6 @@
 package com.zerobase.cms.user.filter;
 
 import com.zerobase.cms.user.service.customer.CustomerService;
-import com.zerobase.cms.user.service.seller.SellerService;
 import com.zerobase.domain.config.JwtAuthenticationProvider;
 import com.zerobase.domain.config.domain.common.UserVo;
 import lombok.RequiredArgsConstructor;
@@ -10,9 +9,6 @@ import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
-
-import static com.zerobase.domain.config.domain.common.UserType.CUSTOMER;
-import static com.zerobase.domain.config.domain.common.UserType.SELLER;
 
 @WebFilter(urlPatterns = "/customer/*")
 @RequiredArgsConstructor
