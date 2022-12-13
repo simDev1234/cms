@@ -4,7 +4,6 @@ import com.zerobase.cms.user.service.customer.CustomerService;
 import com.zerobase.domain.config.JwtAuthenticationProvider;
 import com.zerobase.domain.config.domain.common.UserVo;
 import lombok.RequiredArgsConstructor;
-
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
