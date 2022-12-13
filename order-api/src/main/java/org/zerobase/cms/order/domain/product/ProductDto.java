@@ -5,6 +5,7 @@ import org.zerobase.cms.order.domain.model.Product;
 
 import java.util.List;
 import java.util.stream.Collectors;
+import org.zerobase.cms.order.domain.model.ProductItem;
 
 @Getter
 @Builder
@@ -19,6 +20,7 @@ public class ProductDto {
     private List<ProductItemDto> items;
 
     public static ProductDto from(Product product) {
+
         return ProductDto.builder()
                 .id(product.getId())
                 .name(product.getName())
@@ -26,6 +28,14 @@ public class ProductDto {
                 .items(product.getProductItems().stream()
                         .map(ProductItemDto::from).collect(Collectors.toList()))
                 .build();
+    }
+
+    public static ProductDto withoutItemsFrom(Product product) {
+        return ProductDto.builder()
+            .id(product.getId())
+            .name(product.getName())
+            .description(product.getDescription())
+            .build();
     }
 
 }
